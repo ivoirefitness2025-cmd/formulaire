@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journée Portes Ouvertes - IVOIRE FITNESS</title>
+    <style>
+        /* --- Importation d'une police professionnelle et dynamique --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+        /* --- Variables de couleurs de votre marque (Rouge & Noir) --- */
+        :root {
+            --color-primary: #E50914; /* Rouge IVOIRE FITNESS */
+            --color-dark: #141414;    /* Noir profond */
+            --color-light: #FFFFFF;   /* Blanc pur */
+            --color-grey: #F5F5F5;    /* Gris clair pour les fonds */
+            --color-text: #333333;    /* Gris foncé pour le texte */
+        }
+
+        /* --- Réglages généraux pour une expérience fluide --- */
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--color-grey);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* --- Conteneur principal centré et élégant --- */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: var(--color-light);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* --- Section Héros : l'impact visuel --- */
+        .hero {
+            /* ====================================================== */
+            /* --- MODIFIEZ ICI LE LIEN DE VOTRE IMAGE PRINCIPALE --- */
+            /* ====================================================== */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('https://i.postimg.cc/909rqMVQ/Design-sans-titre-7.png');
+            
+            /* --- Style optimisé pour une image paysage --- */
+            background-size: cover; /* Couvre toute la zone */
+            background-position: center center;
+
+            padding: 80px 20px 60px 20px; /* Espace ajusté pour remonter légèrement le texte */
+            text-align: center;
+            color: var(--color-light);
+            border-bottom: 5px solid var(--color-primary);
+            min-height: 450px; /* Hauteur augmentée pour faire descendre le texte */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Aligne le texte en bas */
+            align-items: center;
+        }
+
+        .hero img.logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5em, 6vw, 3.5em); /* S'adapte à la taille de l'écran */
+            font-weight: 900;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            line-height: 1.2; /* Ajustement de l'interlignage */
+        }
+
+        .hero p {
+            font-size: clamp(1em, 2.5vw, 1.2em);
+            margin-top: 15px; /* Espace ajusté sous le titre */
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Section Contenu : les informations claires --- */
+        .content {
+            padding: 40px;
+        }
+        
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--color-dark);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        /* --- Liste des avantages, claire et engageante --- */
+        .benefits {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .benefits li {
+            background-color: var(--color-grey);
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .benefits li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .benefits li::before {
+            content: '✓';
+            color: var(--color-primary);
+            font-size: 1.8em;
+            margin-right: 15px;
+            font-weight: 900;
+        }
+        
+        /* --- Section Formulaire : le cœur de l'action --- */
+        .form-section {
+            background-color: var(--color-dark);
+            padding: 40px;
+            margin: 40px -40px; /* Prend toute la largeur du conteneur */
+            border-radius: 8px;
+        }
+        
+        .form-section h2 {
+            color: var(--color-light);
+            margin-bottom: 25px;
+        }
+
+        .form-container iframe {
+            width: 100%;
+            height: 580px; /* Hauteur ajustée pour mobile */
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+
+        /* --- Section Infos Pratiques : tout ce qu'il faut savoir --- */
+        .info-section {
+            text-align: center;
+            margin-top: 30px;
+            background-color: var(--color-grey);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .info-section p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        
+        .info-section strong {
+            color: var(--color-primary);
+        }
+        
+        .cta-container {
+            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-light);
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            border: 2px solid var(--color-primary);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: #c40812;
+        }
+
+        .cta-button.secondary {
+             background-color: transparent;
+             color: var(--color-primary);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+        }
+        
+        /* --- Animation pour le logo --- */
+        @keyframes subtle-float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
+            color: #777;
+            background-color: var(--color-grey);
+            border-top: 1px solid #ddd;
+        }
+
+        .footer img {
+            max-width: 200px;
+            margin-bottom: 15px;
+            animation: subtle-float 5s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .footer img:hover {
+            transform: scale(1.05);
+            animation-play-state: paused;
+        }
+
+        /* ============================================================== */
+        /* --- OPTIMISATIONS MOBILES (Écrans de moins de 600px) --- */
+        /* ============================================================== */
+        @media (max-width: 600px) {
+            .content {
+                padding: 30px 20px;
+            }
+            .hero {
+                min-height: 380px; /* Hauteur réduite pour mobile */
+                padding-bottom: 40px;
+            }
+            h2 {
+                font-size: 1.8em; /* Titres de section légèrement plus petits */
+            }
+            .form-section {
+                padding: 30px 20px;
+                margin: 30px -20px; /* Ajustement des marges négatives */
+            }
+            .info-section {
+                padding: 25px 15px;
+            }
+            .benefits li {
+                padding: 15px;
+                flex-direction: column; /* Icône au-dessus du texte */
+                text-align: center;
+            }
+            .benefits li::before {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="hero">
+            <h1>IVOIRE FITNESS OUVRE SES PORTES !</h1>
+            <p>Inscrivez-vous à notre journée découverte et profitez d'offres de lancement exclusives.</p>
+        </header>
+
+        <main class="content">
+
+            <h2>Votre Invitation Gratuite pour une Journée Unique</h2>
+            <ul class="benefits">
+                <li>Ateliers (Yoga, Combat, Cross Fit...)</li>
+                <li>Gadgets IVOIRE FITNESS offerts</li>
+                <li>Offre spéciale "Fondateur"</li>
+                <li>Tirage au sort : accès gratuit !</li>
+                <li>Dégustations et ambiance !</li>
+                <li>Calcul IMC & conseils de coachs</li>
+            </ul>
+
+            <div class="form-section">
+                <h2>Réservez votre place (c'est gratuit !)</h2>
+                <div class="form-container">
+                    <!-- Le code de votre Google Form est intégré ici -->
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfo2sbonhnvyI5X6ysRMgmMHH3H1XwZzQZ6J7bPDwMb4MsO8w/viewform?embedded=true" width="640" height="580" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>Les Infos Essentielles</h2>
+                
+                <!-- ============================================= -->
+                <!-- --- MODIFIEZ ICI LA DATE ET LES HORAIRES ---- -->
+                <!-- ============================================= -->
+                <p>🗓️ <strong>Date :</strong> Bientôt annoncée !</p>
+                <p>📍 <strong>Lieu :</strong> IVOIRE FITNESS, Marcory (en face du grand marché)</p>
+                <p>📞 <strong>Contact :</strong> +225 07 13 70 73 73</p>
+                <p>📧 <strong>Email :</strong> ivoirefitness2025@gmail.com</p>
+                
+                <div class="cta-container">
+                    <!-- ============================================= -->
+                    <!-- --- MODIFIEZ ICI LE LIEN GOOGLE MAPS -------- -->
+                    <!-- ============================================= -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=IVOIRE+FITNESS+grand+marché+Marcory" target="_blank" class="cta-button">📍 Voir sur Google Maps</a>
+                    <a href="https://web.facebook.com/Ivoirefitness" target="_blank" class="cta-button secondary">Suivez-nous sur Facebook</a>
+                </div>
+            </div>
+
+        </main>
+        
+        <footer class="footer">
+            <img src="https://i.postimg.cc/KckcYdpR/Vous-cherchez-l-endroit-parfait-pour-transformer-votre-corps-booster-votre-e-nergie-et-libe-rer-vot.png" alt="Logo IVOIRE FITNESS">
+            <p>&copy; 2025 IVOIRE FITNESS. Le début de votre transformation.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
